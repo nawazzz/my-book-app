@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+#input-parent-container{
+  text-align: center;
+  margin: 20px;
+}
+
+#cards-container{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+#displayed-books-preview{
+  margin: 14px;
+}
+
+#displayed-books-preview img{
+  width: 100%;
+}
+
+#displayed-image-container{
+  /* width: 100px; */
+  /* height: 200px; */
+}

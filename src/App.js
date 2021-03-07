@@ -1,25 +1,77 @@
-import logo from './logo.svg';
+import React from "react"
 import './App.css';
+import List from "./List"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      allBooks: {},
+      query: "",
+      isLoading: false,
+    }
+  }
+
+  componentDidMount() {
+    this.setState({
+      isLoading: true,
+    })
+
+    const url = `https://www.googleapis.com/books/v1/volumes?q="a"`;
+    fetch(url).then(res => res.json()).then(data => {
+        this.setState({
+          allBooks: data,
+          isLoading: false,
+        })
+    }).catch(error => console.log(error));
+  }
+
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.query !== this.state.query) {
+      const url = `https://www.googleapis.com/books/v1/volumes?q=${this.state.query}`;
+      fetch(url).then(res => res.json()).then(data => {
+        this.setState({
+          allBooks: data,
+          isLoading: false,
+        })
+      }).catch(error => console.log(error));
+    }
+  }
+
+  handleSearch = (e) => {
+    this.setState({
+      query: e.target.value,
+      allBooks: {},
+      isLoading: true,
+    })
+  }
+
+  render() {
+    return(
+      <div>
+        <div id="input-parent-container">
+          <input type="text" value={this.state.query} placeholder="Enter book name"    
+          onChange={this.handleSearch}
+          />
+          <button>Show results</button>
+          {this.state.isLoading ? (
+            <div>
+              <div style={{
+                textAlign: 'center'
+              }}>
+                <span>Loading...</span>
+              </div>
+            </div>
+          ) : (
+            <List allBooks={this.state.allBooks} filterBooksFromSearch={this.filterBooksFromSearch} />
+          )}
+          
+        </div>
+      </div>
+    )
+  }
+
 }
 
 export default App;
