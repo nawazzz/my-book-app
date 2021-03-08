@@ -5,7 +5,7 @@ class BookDetails extends React.Component {
 
   render() {
     return(
-      <div className="body">
+      <div className="parentContainerOfAll">
         <div className="mainContainer">
           <div className="bookCoverImage">
             <img src="http://books.google.com/books/content?id=x6aeDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"/>

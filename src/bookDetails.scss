@@ -40,7 +40,7 @@ body{
   background-color: #eee;
 }
 
-.body{
+.parentContainerOfAll{
   background-color: white;
   width: 50%;
   margin: 0 auto;
@@ -161,7 +161,53 @@ body{
   }
 }
 // .......................................................................
-@media only screen and (max-width:899px) {
+@media only screen and (max-width:420px) {
+
+  .parentContainerOfAll {
+    width: 100%;
+    .mainContainer{
+      flex-direction: column;
+      margin-top: 0;
+      .bookCoverImage{
+        width: 100%;
+      }
+      .bookInfoContainer {
+        width: 100%;
+        .bookTitleContainer{
+          .bookTitle{
+            font-size: 20px;
+          }
+        }
+        .pricingContainer{
+          text-align: center;
+          width: 100%;
+          margin-top: 30px;
+          position: static;
+          .priceButtonContainer{
+            flex-direction: column;
+            width: 100%;
+            .freeSampleButtonOne{
+              margin-right: 0px;
+            }
+            .freeSampleButtonTwo{
+              margin-left: 0;
+            }
+          }
+        }
+      }
+      
+    }
+    .addInfoContainer{
+      flex-direction: column;
+      margin-bottom: 0;
+      .writeReview{
+        margin-top: 20px;
+        .reviewPolicy{
+          text-align: center;
+        }
+      }
+    }
+  }
 
 }
 
