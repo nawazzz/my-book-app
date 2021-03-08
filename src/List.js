@@ -1,4 +1,5 @@
 import React from "react"
+import placeholder from "./placeholder.jpg"
 
 class List extends React.Component {
 
@@ -13,7 +14,7 @@ class List extends React.Component {
                   <div 
                   id="displayed-image-container"
                   >
-                    <img class="card-img-top" src={elm.volumeInfo.imageLinks?.smallThumbnail } alt="Card image cap"/>
+                    <img class="card-img-top" src={elm.volumeInfo.imageLinks?.smallThumbnail || placeholder } alt="Card image cap"/>
                   </div>
                   <div class="card-body" className="title-description">
                     <h5 class="card-title" className="book-title">{elm.volumeInfo.title.slice(0, 25) + "..."}</h5>

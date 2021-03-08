@@ -47,10 +47,19 @@ table {
 	border-spacing: 0;
 }
 /* ...................................................... */
-
+*:focus{
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+}
 .input-parent-container{
   text-align: center;
   margin: 20px;
+  input{
+    width: 30%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+  }
 }
 
 .cards-container{
@@ -58,18 +67,16 @@ table {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-}
-.displayed-books-preview{
-  margin: 14px;
-    /* width: 160px !important;
-    height: 230px; */
-  position: sticky;
-}
-
-.displayed-image-container{
-  width: 160px !important;
-    height: 230px;
-    
+  .displayed-books-preview{
+    margin: 14px;
+    position: sticky;
+    background-color: white;
+    border-radius: 5px;
+    #displayed-image-container{
+      width: 160px !important;
+      height: 230px;  
+    }
+  }
 }
 
 .displayed-image-container img{
@@ -80,14 +87,22 @@ table {
 .title-description{
   width: 160px;
   height: 100px;
+  border-top: 2px solid #e5d9d9;
+
+  .book-title{
+    font-size: 15px;
+    padding: 20px 5px 0 5px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .book-description{
+    font-size: 13px;
+    padding-top: 10px;
+  }
 }
 
-.book-title{
-  font-size: 15px;
-}
-.book-description{
-  font-size: 13px;
-}
+
 /* .................................................................. */
 
 @media only screen and (max-width:420px) {

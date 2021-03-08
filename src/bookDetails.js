@@ -1,5 +1,6 @@
 import React from "react"
 import "./bookDetails.scss"
+import placeholder from "./placeholder.jpg"
 
 class BookDetails extends React.Component {
 
@@ -15,11 +16,11 @@ class BookDetails extends React.Component {
           
             <div className="mainContainer">
               <div className="bookCoverImage">
-                <img src={this.props.selectedBook.volumeInfo.imageLinks.thumbnail}/>
+                <img src={this.props.selectedBook.volumeInfo.imageLinks?.smallThumbnail || placeholder}/>
               </div>
               <div className="bookInfoContainer">
                 <div className="bookTitleContainer">
-                  <h5 className="bookTitle">{this.props.selectedBook.volumeInfo.title?.slice(0, 50) + "..."  || "n/a" }</h5>
+                  <h5 className="bookTitle">{this.props.selectedBook.volumeInfo.title?.slice(0, 30) + "..."  || "n/a" }</h5>
                   <h6 className="authorName">{this.props.selectedBook.volumeInfo.authors}</h6>
                   <p className="publisher">{this.props.selectedBook.volumeInfo.publisher}</p>
                 </div>
