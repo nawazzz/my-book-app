@@ -7,7 +7,12 @@ class BookDetails extends React.Component {
 
   render() {
     return(
+      <React.Fragment>
+        <div className="homeButtonContainer">
+          <a href="/" className="homeButton">Home</a>
+        </div>
         <div className="parentContainerOfAll">
+          
             <div className="mainContainer">
               <div className="bookCoverImage">
                 <img src={this.props.selectedBook.volumeInfo.imageLinks.thumbnail}/>
@@ -53,6 +58,7 @@ class BookDetails extends React.Component {
               </div>
             </div>
         </div>
+      </React.Fragment>
     )
   }
 

@@ -39,7 +39,15 @@ ol, ul {
 body{
   background-color: #eee;
 }
+.homeButtonContainer{
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
 
+  .homeButton{
+    font-weight: 700;
+  }
+}
 .parentContainerOfAll{
   background-color: white;
   width: 50%;
@@ -53,7 +61,6 @@ body{
 
   .mainContainer{
     width: 100%;
-    margin-top: 50px;
     display: flex;
     justify-content: space-between;
     .bookCoverImage{
@@ -162,7 +169,7 @@ body{
 }
 // .......................................................................
 @media only screen and (max-width:420px) {
-
+ 
   .parentContainerOfAll {
     width: 100%;
     .mainContainer{
