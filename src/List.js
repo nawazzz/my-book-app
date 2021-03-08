@@ -18,7 +18,7 @@ class List extends React.Component {
                   </div>
                   <div class="card-body" className="title-description">
                     <h5 class="card-title" className="book-title">{elm.volumeInfo.title.slice(0, 25) + "..."}</h5>
-                    <p class="card-text" className="book-description">{elm.volumeInfo.description?.slice(0, 30) && elm.volumeInfo.description?.slice(0, 50) + "..."  || "n/a" }</p>
+                    <p class="card-text" className="book-description">{elm.volumeInfo.description?.slice(0, 30) && elm.volumeInfo.description?.slice(0, 30) + "..."  || "n/a" }</p>
                   </div>
                 </div>
               )

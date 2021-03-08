@@ -73,7 +73,8 @@ table {
     position: sticky;
     background-color: white;
     border-radius: 5px;
-    box-shadow: 2px 3px 20px 8px #ada7a7;
+    box-shadow: 2px 3px 20px 8px #d4cccc;
+
     #displayed-image-container{
       width: 160px !important;
       height: 240px;  
@@ -97,6 +98,7 @@ table {
       .book-description{
         font-size: 13px;
         padding: 5px;
+        letter-spacing: 1px;
       }
     }
   }
