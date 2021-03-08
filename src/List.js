@@ -5,27 +5,25 @@ class List extends React.Component {
   render() {
 
     return(
-      <div>
-        <div>
-          <ul id="cards-container">
+      <React.Fragment>
+          <ul className="cards-container" style={{cursor: "pointer"}}>
             {this.props.allBooks.items && this.props.allBooks.items.map((elm, index) => {
               return (
-                <div class="card" id="displayed-books-preview"  >
+                <div class="card" className="displayed-books-preview" onClick={() => this.props.handleBookSelection(elm)} >
                   <div 
                   id="displayed-image-container"
                   >
                     <img class="card-img-top" src={elm.volumeInfo.imageLinks?.smallThumbnail } alt="Card image cap"/>
                   </div>
-                  <div class="card-body" id="title-description">
-                    <h5 class="card-title" id="book-title">{elm.volumeInfo.title.slice(0, 25) + "..."}</h5>
-                    <p class="card-text" id="book-description">{elm.volumeInfo.description?.slice(0, 30) && elm.volumeInfo.description?.slice(0, 50) + "..."  || "n/a" }</p>
+                  <div class="card-body" className="title-description">
+                    <h5 class="card-title" className="book-title">{elm.volumeInfo.title.slice(0, 25) + "..."}</h5>
+                    <p class="card-text" className="book-description">{elm.volumeInfo.description?.slice(0, 30) && elm.volumeInfo.description?.slice(0, 50) + "..."  || "n/a" }</p>
                   </div>
                 </div>
               )
             })}
           </ul>
-        </div>
-      </div>
+      </React.Fragment>
     )
 
   }

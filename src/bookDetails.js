@@ -3,58 +3,56 @@ import "./bookDetails.scss"
 
 class BookDetails extends React.Component {
 
+
+
   render() {
     return(
-      <div className="parentContainerOfAll">
-        <div className="mainContainer">
-          <div className="bookCoverImage">
-            <img src="http://books.google.com/books/content?id=x6aeDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api"/>
-          </div>
-          <div className="bookInfoContainer">
-            <div className="bookTitleContainer">
-              <h5 className="bookTitle">A Practical Guide to Federal Evidence</h5>
-              <h6 className="authorName">Anthony J. Bocchino</h6>
-              <p className="publisher">Aspen Publishers</p>
+        <div className="parentContainerOfAll">
+            <div className="mainContainer">
+              <div className="bookCoverImage">
+                <img src={this.props.selectedBook.volumeInfo.imageLinks.thumbnail}/>
+              </div>
+              <div className="bookInfoContainer">
+                <div className="bookTitleContainer">
+                  <h5 className="bookTitle">{this.props.selectedBook.volumeInfo.title?.slice(0, 50) + "..."  || "n/a" }</h5>
+                  <h6 className="authorName">{this.props.selectedBook.volumeInfo.authors}</h6>
+                  <p className="publisher">{this.props.selectedBook.volumeInfo.publisher}</p>
+                </div>
+                <div className="pricingContainer">
+                  <div>
+                    <a href="#" className="addToWishlist">Add to Wishlist</a>
+                  </div>
+                  <div className="priceButtonContainer">
+                    <div className="freeSampleButtonOne">
+                      <a href="#">Free sample</a>
+                    </div>
+                    <div className="freeSampleButtonTwo">
+                      <a href="#">€4.99 Ebook</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="pricingContainer">
+            <div className="aboutTheBookContainer">
+              <h5 className="synopsis">Synopsis:</h5>
+              <p>{this.props.selectedBook.volumeInfo.description || "Synopsis not available."}</p>
+            </div>
+            <div className="heroContainer">
+              <h5 className="aboutAuthor">ABOUT THE AUTHOR:</h5>
+              <p className="authorBio">
+              He teaches in his hometown and in many American and European universities. Author of many volumes, including Welcome to the desert of the real (Meltemi, 2002), Thirteen times Lenin (Feltrinelli, 2003), The rough subject (Raffaello Cortina, 2003), The epidemic of the imaginary (Meltemi, 2004), The perverse heart of Christianity (Meltemi, 2006), Reading Lacan (Bollati Boringhieri, 2009).
+              </p>
+            </div>
+            <div className="addInfoContainer">
               <div>
-                <a href="#" className="addToWishlist">Add to Wishlist</a>
+                <h5 className="reviews">REVIEWS:</h5>
               </div>
-              <div className="priceButtonContainer">
-                <div className="freeSampleButtonOne">
-                  <a href="#">Free sample</a>
-                </div>
-                <div className="freeSampleButtonTwo">
-                  <a href="#">€4.99 Ebook</a>
-                </div>
+              <div className="writeReview">
+                <a href="#" className="reviewPolicy">Review policy and info</a>
+                <a href="#" className="reviewIt">Write a Review</a>
               </div>
             </div>
-          </div>
         </div>
-        <div className="aboutTheBookContainer">
-          <h5 className="synopsis">Synopsis:</h5>
-          <p>How does human life change in the time of the coronavirus?</p>
-          <p>In these interventions, the best-known philosopher in the world follows the current, unprecedented pandemic crisis day by day, which is radically changing the existence of individuals, relations between people and state, international relations. An unmissable book for those who, in addition to the tragic news and scientific information, feel the need for a broader and farsighted point of observation: not without a form - apparently paradoxical - of optimism.</p>
-          <p>You can get free Virus updates from stores that provide the feature. For reports or problems, write to us at virus@ponteallegrazie.it.</p>
-          <p>First edition: 13/3/2020. Fifteenth edition: 6/8/2020</p>
-        </div>
-        <div className="heroContainer">
-          <h5 className="aboutAuthor">ABOUT THE AUTHOR:</h5>
-          <p className="authorBio">
-          He teaches in his hometown and in many American and European universities. Author of many volumes, including Welcome to the desert of the real (Meltemi, 2002), Thirteen times Lenin (Feltrinelli, 2003), The rough subject (Raffaello Cortina, 2003), The epidemic of the imaginary (Meltemi, 2004), The perverse heart of Christianity (Meltemi, 2006), Reading Lacan (Bollati Boringhieri, 2009).
-          </p>
-        </div>
-        <div className="addInfoContainer">
-          <div>
-            <h5 className="reviews">REVIEWS:</h5>
-          </div>
-          <div className="writeReview">
-            <a href="#" className="reviewPolicy">Review policy and info</a>
-            <a href="#" className="reviewIt">Write a Review</a>
-          </div>
-        </div>
-
-      </div>
     )
   }
 
