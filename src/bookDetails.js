@@ -54,7 +54,7 @@ class BookDetails extends React.Component {
                 <h5 className="reviews">REVIEWS:</h5>
               </div>
               <div className="writeReview">
-                <a href="#" className="reviewPolicy">Review policy and info</a>
+                <a href="#" className="reviewPolicy">More Information</a>
                 <a href="#" className="reviewIt">Write a Review</a>
               </div>
             </div>
