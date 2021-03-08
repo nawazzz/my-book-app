@@ -18,22 +18,42 @@ class BookDetails extends React.Component {
             </div>
             <div className="pricingContainer">
               <div>
-                <a href="#">Add to Wishlist</a>
+                <a href="#" className="addToWishlist">Add to Wishlist</a>
               </div>
               <div className="priceButtonContainer">
-                <div>
+                <div className="freeSampleButtonOne">
                   <a href="#">Free sample</a>
                 </div>
-                <div>
+                <div className="freeSampleButtonTwo">
                   <a href="#">€4.99 Ebook</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="priceDropOffer">
-          <p>62% priceDropOffer</p>
+        <div className="aboutTheBookContainer">
+          <h5 className="synopsis">Synopsis:</h5>
+          <p>How does human life change in the time of the coronavirus?</p>
+          <p>In these interventions, the best-known philosopher in the world follows the current, unprecedented pandemic crisis day by day, which is radically changing the existence of individuals, relations between people and state, international relations. An unmissable book for those who, in addition to the tragic news and scientific information, feel the need for a broader and farsighted point of observation: not without a form - apparently paradoxical - of optimism.</p>
+          <p>You can get free Virus updates from stores that provide the feature. For reports or problems, write to us at virus@ponteallegrazie.it.</p>
+          <p>First edition: 13/3/2020. Fifteenth edition: 6/8/2020</p>
         </div>
+        <div className="heroContainer">
+          <h5 className="aboutAuthor">ABOUT THE AUTHOR:</h5>
+          <p className="authorBio">
+          He teaches in his hometown and in many American and European universities. Author of many volumes, including Welcome to the desert of the real (Meltemi, 2002), Thirteen times Lenin (Feltrinelli, 2003), The rough subject (Raffaello Cortina, 2003), The epidemic of the imaginary (Meltemi, 2004), The perverse heart of Christianity (Meltemi, 2006), Reading Lacan (Bollati Boringhieri, 2009).
+          </p>
+        </div>
+        <div className="addInfoContainer">
+          <div>
+            <h5 className="reviews">REVIEWS:</h5>
+          </div>
+          <div className="writeReview">
+            <a href="#" className="reviewPolicy">Review policy and info</a>
+            <a href="#" className="reviewIt">Write a Review</a>
+          </div>
+        </div>
+
       </div>
     )
   }
